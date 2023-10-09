@@ -22,7 +22,7 @@ for j=1:5
     chan = V2VChannel;
     chan.SampleRate = fs;
     chan.DelayProfile = channeltype(j);
-    snr =15+(40-15)*rand();
+    %You can choose an appropriate range of SNR for vehicular 
     temp = v2vChanEstSimulator(cfgNHT, chan, snr);
     H(i+NC*(j-1),:,1)= real(temp);
     H(i+NC*(j-1),:,2)= imag(temp);
