@@ -32,30 +32,24 @@ def DCNN():
     x = Conv1D(30, 15, padding='same')(cnn_input)
     x = Activation('relu')(x)
     x = Conv1D(20, 15, padding='same')(x)
-    # x = SeparableConv1D(32, KS, padding='same')(x)
     x = Activation('relu')(x)
     x = AveragePooling1D(4)(x)
     x = Conv1D(30, 15, padding='same')(x)
     x = Activation('relu')(x)
     x = AveragePooling1D(4)(x)
     x = Conv1D(20, 15, padding='same')(x)
-    # x = SeparableConv1D(32, KS, padding='same')(x)
     x = Activation('relu')(x)
-    # x = SeparableConv1D(32, KS, padding='same')(x
     x = Conv1D(30, 15, padding='same')(x)
     x = Activation('relu')(x)
     x = AveragePooling1D(4)(x)
-    # x = SeparableConv1D(32, KS, padding='same')(x)
     x = Conv1D(30, 15, padding='same')(x)
     x = Activation('relu')(x)
     x = Flatten()(x)
     x = Dense(25,activation="relu", kernel_regularizer=regularizers.l2(0.01))(x)
     x = Dense(5, activation="softmax", kernel_regularizer=regularizers.l2(0.01))(x)
-
     model = Model(inputs=cnn_input, outputs=x)
     model.compile(loss='categorical_crossentropy',optimizer='adam', metrics=['accuracy'])
     return model
-
 data_path="V2V_H_SI.mat"
 data = scio.loadmat(data_path)
 x=data.get('H')
@@ -71,7 +65,7 @@ y = to_categorical(y)
 X_train, X_val, Y_train, Y_val = train_test_split(x, y, test_size = 0.3, random_state= 1)
 model = DCNN()
 model.summary()
-checkpoint = ModelCheckpoint("LCNN_DCNN.hdf5", verbose=1, save_best_only=False)
+checkpoint = ModelCheckpoint("DCNN.hdf5", verbose=1, save_best_only=False)
 hist=model.fit(
     X_train,
     Y_train,
@@ -84,5 +78,5 @@ hist=model.fit(
 train_test_list = [hist.history['accuracy'],hist.history['val_accuracy'],hist.history['loss'],hist.history['val_loss']]
 train_test_array=np.array(train_test_list).T
 df = pd.DataFrame(train_test_array, columns=['Training Acc', 'Test Acc','Training Loss','Test Loss'])
-df.to_excel("LCNN_DCNN.xlsx", index=False)
+df.to_excel("DCNN.xlsx", index=False)
 
