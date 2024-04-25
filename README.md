@@ -4,7 +4,7 @@ Note: This work has already been accepted by IEEE WCNC 2024 and the repository c
 # Requirements
 Matlab 2022a, keras=2.9.0 tensorflow-gpu=2.9.0, python 3.8+
 # Scenario Dataset
-run traindatasetgeneration.m to generate.
+run traindatasetgeneration.m to generater rather than traindata.m. traindata.m is used for generating your own dataset.
 # Matlab code
 1. Simulate IEEE 802.11p environment to generate datasets with varying signal-to-noise ratios (SNR) which ranges from 15 dB to 38 dB under different scenarios.
 2. Adaptive Modulation and Coding
