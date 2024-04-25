@@ -1,3 +1,12 @@
 # SI-AMC
 The implement of SI-AMC using keras and Matlab.
-Note: This work has already been submitted to WCNC 2024 and the repository contains some of the implementation code for our research work. Once the paper is accepted, all the code and the model will be released at that time！
+Note: This work has already been accepted by IEEE WCNC 2024 and the repository contains some of the implementation code for our research work. 
+# Requirements
+Matlab 2022a, keras=2.9.0 tensorflow-gp=2.9.0, python 3.8+
+# Matlab code
+1. Simulate IEEE 802.11p environment to generate datasets with varying signal-to-noise ratios (SNR) which ranges from -10dB to 10dB under different scenarios.
+2. Adaptive Modulation and Coding
+# Python code
+Utilize Keras to train Scenario Identification model for ECNN.
+# Paper
+Pending publication！
