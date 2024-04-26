@@ -8,6 +8,7 @@ run traindatasetgeneration.m to generater rather than traindata.m. traindata.m i
 # Matlab code
 1. Simulate IEEE 802.11p environment to generate datasets with varying signal-to-noise ratios (SNR) which ranges from 15 dB to 38 dB under different scenarios.
 2. Adaptive Modulation and Coding
+Note: maxNumErrors and maxNumPackets should be larger to avoid randomness.(eg: maxNumErrors and maxNumPackets are 100 and 1000 respectively!)
 # Python code
 Utilize Keras to train Scenario Identification model for ECNN.
 # Paper
