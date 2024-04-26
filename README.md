@@ -10,6 +10,6 @@ run traindatasetgeneration.m to generater rather than traindata.m. traindata.m i
 2. Adaptive Modulation and Coding
 Note: maxNumErrors and maxNumPackets should be larger to avoid randomness.(eg: maxNumErrors and maxNumPackets are 100 and 1000 respectively!)
 # Python code
-Utilize Keras to train Scenario Identification model for ECNN.
+Utilize Keras to train ECNN model for Scenario Identification.
 # Paper
 Pending publication！
